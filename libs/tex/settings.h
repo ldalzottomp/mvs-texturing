@@ -88,6 +88,7 @@ struct Settings {
     ToneMapping tone_mapping = TONE_MAPPING_NONE;
 
     bool geometric_visibility_test = true;
+    bool accept_faces_from_all_viewing_angle = false;
     bool global_seam_leveling = true;
     bool local_seam_leveling = true;
     bool hole_filling = true;
