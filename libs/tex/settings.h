@@ -15,6 +15,7 @@
 #include <string>
 
 #include "defines.h"
+#include "mapmap/header/mapmap.h"
 
 template <typename T>
 const std::vector<std::string> choice_strings();
@@ -89,6 +90,20 @@ struct Settings {
 
     bool geometric_visibility_test = true;
     bool accept_faces_from_all_viewing_angle = false;
+    mapmap::mapMAP_control view_selection_control = {
+        .use_multilevel = true,
+        .use_spanning_tree = true,
+        .use_acyclic = true,
+        .spanning_tree_multilevel_after_n_iterations = 5,
+        .force_acyclic = true,
+        .min_acyclic_iterations = 5,
+        .relax_acyclic_maximal = true,
+        .tree_algorithm = mapmap::LOCK_FREE_TREE_SAMPLER,
+
+        /* Set false for non-deterministic (but faster) mapMAP execution. */
+        .sample_deterministic = true,
+        .initial_seed = 548923723,
+    };
     bool global_seam_leveling = true;
     bool local_seam_leveling = true;
     bool hole_filling = true;
