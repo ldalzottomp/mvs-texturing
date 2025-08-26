@@ -15,7 +15,7 @@
 #include <string>
 
 #include "defines.h"
-#include "mapmap/header/mapmap.h"
+#include "mapmap/header/settings.h"
 
 template <typename T>
 const std::vector<std::string> choice_strings();
